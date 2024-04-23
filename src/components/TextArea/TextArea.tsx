@@ -1,6 +1,12 @@
 import "./styles.css";
 
-function TextArea({placeholder, name, label}) {
+interface TextAreaProps {
+    placeholder: string,
+    name: string,
+    label: string
+}
+
+function TextArea({placeholder, name, label}: TextAreaProps) {
     return (
         <div className="text-area-container">
             <label>{label}</label>

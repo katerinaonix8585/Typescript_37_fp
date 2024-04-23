@@ -1,7 +1,14 @@
 import "./styles.css";
 
+interface UserData {
+  avatar: string;
+  userName: string;
+  profession: string;
+  hobbies: string[];
+}
+
 function ProfileCard() {
-  const userData = {
+  const userData : UserData = {
     avatar:
       "https://img.freepik.com/premium-vector/men-women-different-poses-sitting-standing-isolated-white-background-cute-flat-style-vector-illustration_71599-9116.jpg?w=740",
     userName: "John Doe",

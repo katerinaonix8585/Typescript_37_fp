@@ -1,6 +1,7 @@
 import "./styles.css";
+import { InputProps } from "./types";
 
-function Input({ name, type = "text", placeholder, label, onInputChange }) {
+function Input({ name, type = "text", placeholder, label, onInputChange } : InputProps) {
   return (
     <div className="input-component-container">
       <label className="input-component-label">{label}</label>
