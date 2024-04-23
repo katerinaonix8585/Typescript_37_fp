@@ -1,9 +1,16 @@
 import './App.css';
 
+// Lessons
+import Lesson06 from './lessons/Lesson06/Lesson06';
+
+//Homeworks
+
+//Consultation
+
 function App() {
   return (
     <div className="App">
-       My first TS project
+       <Lesson06 />
     </div>
   );
 }
