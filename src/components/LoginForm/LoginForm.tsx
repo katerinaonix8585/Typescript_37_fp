@@ -12,15 +12,17 @@ function LoginForm() {
           type="email"
           placeholder="Enter your email"
           label="Email"
+          onInputChange={()=>{}}
         />
         <Input
           name="login-password"
           type="password"
           placeholder="Enter your password"
           label="Password"
+          onInputChange={()=>{}}
         />
       </div>
-      <Button type="submit" name="Login" />
+      <Button type="submit" name="Login" onButtonClick={()=>{}} />
     </div>
   );
 }
