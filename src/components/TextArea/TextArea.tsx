@@ -1,10 +1,5 @@
 import "./styles.css";
-
-interface TextAreaProps {
-    placeholder: string,
-    name: string,
-    label: string
-}
+import { TextAreaProps } from "./types";
 
 function TextArea({placeholder, name, label}: TextAreaProps) {
     return (
