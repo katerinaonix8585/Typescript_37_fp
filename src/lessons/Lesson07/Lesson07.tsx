@@ -1,6 +1,19 @@
-import "./styles.css"
+import { useState } from "react";
+import "./styles.css";
+import Counter from "components/Counter/Counter";
 
 function Lesson07() {
+
+const [count, setCount] = useState<number>(0);
+
+  const onMinus = (): void => {
+    setCount((prevValue) => prevValue - 1);
+  };
+
+  const onPlus = (): void => {
+    setCount((prevValue) => prevValue + 1);
+  };
+
 // generic
 // generic указывается при создании type или interface после названия
 type CustomArrayType<T = string> = T[];
@@ -69,7 +82,7 @@ enum WeathersCode {
 
 
 return <div>
-        Lesson07
+        <Counter countValue={count} onMinusClick={onMinus} onPlusClick={onPlus} />
     </div>
 }
 
