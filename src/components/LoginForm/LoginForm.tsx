@@ -1,12 +1,12 @@
-import "./styles.css";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
+import { InputsContainerWrapper, LoginformParagraph, LoginformWrapper } from "./styles";
 
 function LoginForm() {
   return (
-    <div className="loginform-wrapper">
-      <p className="loginform-name">Login form</p>
-      <div className="inputs-container">
+    <LoginformWrapper className="loginform-wrapper">
+      <LoginformParagraph className="loginform-name">Login form</LoginformParagraph>
+      <InputsContainerWrapper>
         <Input
           name="login-email"
           type="email"
@@ -21,9 +21,9 @@ function LoginForm() {
           label="Password"
           
         />
-      </div>
+      </InputsContainerWrapper>
       <Button type="submit" name="Login" onButtonClick={()=>{}} />
-    </div>
+    </LoginformWrapper>
   );
 }
 

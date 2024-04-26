@@ -1,4 +1,5 @@
-import "./styles.css";
+import "./styles.ts";
+import { ButtonControl, CounterResult, CounterWrapper } from "./styles";
 import { CounterProps } from "./types";
 import Button from "components/Button/Button";
 
@@ -6,15 +7,15 @@ import Button from "components/Button/Button";
 function Counter({ countValue, onMinusClick, onPlusClick }: CounterProps) {
   
   return (
-    <div className="counter-wrapper">
-      <div className="button-control">
+    <CounterWrapper>
+      <ButtonControl>
         <Button name="-" onButtonClick={onMinusClick}/>
-      </div>
-      <p>{countValue}</p>
-      <div className="button-control">
+      </ButtonControl>
+      <CounterResult>{countValue}</CounterResult>
+      <ButtonControl>
         <Button name="+" onButtonClick={onPlusClick}/>
-      </div>
-    </div>
+      </ButtonControl>
+    </CounterWrapper>
   );
 }
 
