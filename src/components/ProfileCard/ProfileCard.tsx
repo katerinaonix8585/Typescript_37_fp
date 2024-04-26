@@ -1,4 +1,4 @@
-import "./styles.css";
+import { ProfileCardImage, ProfileCardParagraph, ProfileCardTitleH3, ProfileCardWrapper } from "./styles";
 import { User } from "./types";
 
 
@@ -13,16 +13,16 @@ function ProfileCard() {
   };
 
   return (
-    <div className="profile-card-wrapper">
-      <img src={userData.avatar} />
-      <h3>{userData.userName}</h3>
-      <p>
+    <ProfileCardWrapper>
+      <ProfileCardImage src={userData.avatar} />
+      <ProfileCardTitleH3>{userData.userName}</ProfileCardTitleH3>
+      <ProfileCardParagraph>
         <span className="property-name">Profession:</span> {userData.profession}
-      </p>
-      <p>
+      </ProfileCardParagraph>
+      <ProfileCardParagraph>
         <span className="property-name">Hobby:</span> {userData.hobbies[0]}
-      </p>
-    </div>
+      </ProfileCardParagraph>
+    </ProfileCardWrapper>
   );
 }
 
