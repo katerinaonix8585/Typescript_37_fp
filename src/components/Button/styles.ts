@@ -4,7 +4,7 @@ interface ButtonComponent {
 }
 
 export const ButtonComponent = styled.button<ButtonComponent>`
-width: 100%;
+  width: 100%;
   height: 70px;
   outline: none;
   border: none;
