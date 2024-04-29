@@ -1,37 +1,39 @@
-import Input from "components/Input/Input";
-import { Homework09Wrapper, InputComponent, ButtonComponent, LabelComponent, TextComponent } from "./styles";
 import { ChangeEvent, useState } from "react";
 
-function Homework09 (){
-    // const [inputValue, setInputValue] = useState<string>('');
-    // const [inputValue2, setInputValue2] = useState<string>('');
-    // const [outputValue1, setOutputValue1] = useState<string>(''); 
-    // const [outputValue2, setOutputValue2] = useState<string>('');
+import Button from "components/Button/Button"
+import { Homework09Wrapper, ResultWrapper, ResultsBlock } from "./styles"
+import Input from "components/Input/Input";
 
-    // const OnChangeInput = (event:ChangeEvent<HTMLInputElement>) => {
-    //   setInputValue(event.target.value)
-    // }  
-  
-    // const OnChangeInput2 = (event:ChangeEvent<HTMLInputElement>) => {
-    //   setInputValue2(event.target.value)
-    // }  
+function Homework09() {
+  const [firstNote, setFirstNote] = useState<string>('');
+  const [secondNote, setSecondNote] = useState<string>('');
+  const [isShowResult, setIsShowResult] = useState<boolean>(false);
 
-    // const handleButtonClick = () => {
-    //   setOutputValue1(inputValue);
-    //   setOutputValue2(inputValue2);
-    }
-
-    return (
-        <Homework09Wrapper>
-            <InputComponent name="value_1" placeholder="value 1" value={inputValue} onChange={OnChangeInput} />
-            <InputComponent name="value_2" placeholder="value 2" value={inputValue2} onChange={OnChangeInput2} />
-            <ButtonComponent name="Output of value" onClick={handleButtonClick}>Output of value</ButtonComponent>
-            <LabelComponent>Value 1:</LabelComponent>
-            <TextComponent>{outputValue1}</TextComponent>
-            <LabelComponent>Value 2:</LabelComponent>
-            <TextComponent>{outputValue2}</TextComponent> */
-        </Homework09Wrapper>
-    );
-
+  const onFirstNoteInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    setFirstNote(event.target.value)
   }
+
+  const onSecondNoteInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    setSecondNote(event.target.value)
+  }
+
+  const onShowResult = () => {
+    // setIsShowResult(true)
+      setIsShowResult(!isShowResult)
+  }
+
+  return (
+    <Homework09Wrapper>
+      <Input placeholder="First note" onInputChange={onFirstNoteInputChange} name='firstNote' label='First note' />
+      <Input placeholder="Second note" onInputChange={onSecondNoteInputChange} name='secondNote' label='Second note' />
+      <Button name='Show notes' onButtonClick={onShowResult} />
+      <ResultsBlock isShowResult={isShowResult}>
+        <ResultWrapper>{firstNote}</ResultWrapper>
+        <ResultWrapper>{secondNote}</ResultWrapper>
+      </ResultsBlock>
+    </Homework09Wrapper>
+  )
+
+}
+
 export default Homework09;

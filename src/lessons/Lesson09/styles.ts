@@ -16,7 +16,7 @@ export const InputExample = styled.input`
  font-size: 24px;
  border-radius: 4px;
 `
+
 export const Result = styled.p`
- font-size:40px;
- 
+ font-size: 40px;
 `
