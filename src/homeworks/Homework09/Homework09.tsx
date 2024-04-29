@@ -1,23 +1,24 @@
+import Input from "components/Input/Input";
 import { Homework09Wrapper, InputComponent, ButtonComponent, LabelComponent, TextComponent } from "./styles";
 import { ChangeEvent, useState } from "react";
 
 function Homework09 (){
-    const [inputValue, setInputValue] = useState<string>('');
-    const [inputValue2, setInputValue2] = useState<string>('');
-    const [outputValue1, setOutputValue1] = useState<string>(''); 
-    const [outputValue2, setOutputValue2] = useState<string>('');
+    // const [inputValue, setInputValue] = useState<string>('');
+    // const [inputValue2, setInputValue2] = useState<string>('');
+    // const [outputValue1, setOutputValue1] = useState<string>(''); 
+    // const [outputValue2, setOutputValue2] = useState<string>('');
 
-    const OnChangeInput = (event:ChangeEvent<HTMLInputElement>) => {
-      setInputValue(event.target.value)
-    }  
+    // const OnChangeInput = (event:ChangeEvent<HTMLInputElement>) => {
+    //   setInputValue(event.target.value)
+    // }  
   
-    const OnChangeInput2 = (event:ChangeEvent<HTMLInputElement>) => {
-      setInputValue2(event.target.value)
-    }  
+    // const OnChangeInput2 = (event:ChangeEvent<HTMLInputElement>) => {
+    //   setInputValue2(event.target.value)
+    // }  
 
-    const handleButtonClick = () => {
-      setOutputValue1(inputValue);
-      setOutputValue2(inputValue2);
+    // const handleButtonClick = () => {
+    //   setOutputValue1(inputValue);
+    //   setOutputValue2(inputValue2);
     }
 
     return (
@@ -28,9 +29,9 @@ function Homework09 (){
             <LabelComponent>Value 1:</LabelComponent>
             <TextComponent>{outputValue1}</TextComponent>
             <LabelComponent>Value 2:</LabelComponent>
-            <TextComponent>{outputValue2}</TextComponent>
+            <TextComponent>{outputValue2}</TextComponent> */
         </Homework09Wrapper>
     );
-}
 
+  }
 export default Homework09;
