@@ -1,35 +1,34 @@
 import { useEffect, useState } from 'react';
-import { ButtonWrapper, DefaultResult, Lesson10Component, Result, ResultWrapper } from "./styles";
+import { ButtonsContainer, FactsBlock, CatFactWrapper, Lesson10Component } from "./styles";
 import Button from 'components/Button/Button';
+import { v4 } from 'uuid';
 
 function Lesson10() {
-
-    const [fact, setFact] = useState<string[]>([]);        
+    const [catFacts, setCatFacts] = useState<string[]>([]);        
 
     // Функция при нажатии кнопки Get More Info
     const buttonGetMoreInfo = () => {
-        getFact();        
+        getCatFact();        
     };
 
     // Функция при нажатии кнопки Delete All data (передаем нулевой массив)
     const buttonDeleteAllData = () => {
-        setFact([]);
+        setCatFacts([]);
     };
 
 
     // Обработка запроса
-    const getFact = async () => {
+    const getCatFact = async () => {
         try {
            const response = await fetch('https://catfact.ninja/fact')
-           const result = await response.json();
-           console.log(result);
+           const result = await response.json();           
            
            if (!response.ok) {
               throw Object.assign(new Error('API Error'), {
                 response: result
                });
             } else {
-                setFact(prevFact => [...prevFact, result.fact]);
+                setCatFacts(prevValue => [...prevValue, result.fact]);
             }
         } catch(error) {
            console.log(error)
@@ -38,30 +37,25 @@ function Lesson10() {
 
     // При загрузке страницы
     useEffect(() => {        
-       getFact();        
+        getCatFact();        
     }, []);
 
     // Отображаем содержимое странцийф по условию
 
-    function showContent() {
-        return fact.length > 0 ? (
-            <ResultWrapper>
-                {fact.map((fact, index) => (
-                    <Result key={index}>{fact}</Result>
-                ))}
-            </ResultWrapper>
-        ) : (
-            <DefaultResult />
-        );
-    }    
+    const catFactsElements = catFacts.map((catFact: string, index) => {
+        return <CatFactWrapper key={v4()}>{catFact}</CatFactWrapper>
+    })
+            
+         
  
 return (
     <Lesson10Component>
-       <ButtonWrapper>
-       <Button name='GET MORE INFO'  onButtonClick={buttonGetMoreInfo}/>
-       <Button name='DELETE ALL DATA' onButtonClick={buttonDeleteAllData}/>
-       </ButtonWrapper>
-       {showContent()}      
+       <ButtonsContainer>
+         <Button name='GET MORE INFO'  onButtonClick={buttonGetMoreInfo}/>
+         <Button name='DELETE ALL DATA' onButtonClick={buttonDeleteAllData}/>
+       </ButtonsContainer>
+       <FactsBlock>{catFactsElements}</FactsBlock>
+             
     </Lesson10Component>
   )
 }
