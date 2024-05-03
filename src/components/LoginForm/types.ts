@@ -3,3 +3,8 @@ export interface LoginFormValues {
     password: string,
   }
   
+  export enum LOGIN_FIELD_NAMES {
+    EMAIL = 'email',
+    PASSWORD = 'password'
+  }
+  
