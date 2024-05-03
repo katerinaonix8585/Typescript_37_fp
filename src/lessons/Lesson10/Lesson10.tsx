@@ -1,63 +1,79 @@
 import { useEffect, useState } from 'react';
-import { ButtonsContainer, FactsBlock, CatFactWrapper, Lesson10Component } from "./styles";
-import Button from 'components/Button/Button';
 import { v4 } from 'uuid';
 
+import {
+  ButtonsContainer,
+  CatFactWrapper,
+  FactsBlock,
+  Lesson10Component,
+  SpinnerContainer,
+} from './styles';
+
+
+import Button from 'components/Button/Button'
+import Spinner from 'components/Spinner/Spinner';
+
 function Lesson10() {
-    const [catFacts, setCatFacts] = useState<string[]>([]);        
+    const [catFacts, setCatFacts] = useState<string[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);       
 
-    // Функция при нажатии кнопки Get More Info
-    const buttonGetMoreInfo = () => {
-        getCatFact();        
-    };
-
-    // Функция при нажатии кнопки Delete All data (передаем нулевой массив)
-    const buttonDeleteAllData = () => {
-        setCatFacts([]);
-    };
-
-
-    // Обработка запроса
     const getCatFact = async () => {
         try {
-           const response = await fetch('https://catfact.ninja/fact')
-           const result = await response.json();           
-           
-           if (!response.ok) {
-              throw Object.assign(new Error('API Error'), {
-                response: result
-               });
-            } else {
-                setCatFacts(prevValue => [...prevValue, result.fact]);
-            }
-        } catch(error) {
-           console.log(error)
-        } 
-    }
-
-    // При загрузке страницы
-    useEffect(() => {        
-        getCatFact();        
-    }, []);
-
-    // Отображаем содержимое странцийф по условию
-
-    const catFactsElements = catFacts.map((catFact: string, index) => {
+          setIsLoading(true)
+          const response = await fetch('https://catfact.ninja/fact')
+          const result = await response.json();
+    
+          if (!response.ok) {
+            throw Object.assign(new Error('API Error'), {
+              response: result
+            })
+          } else {
+            setCatFacts((prevValue) => [...prevValue, result.fact])
+          }
+        } catch (error) {
+          console.log(error)
+        } finally {
+          setIsLoading(false)
+        }
+      }
+    
+      useEffect(() => {
+        getCatFact()
+      }, []);
+    
+      const catFactsElements = catFacts.map((catFact: string) => {
         return <CatFactWrapper key={v4()}>{catFact}</CatFactWrapper>
-    })
-            
-         
- 
-return (
-    <Lesson10Component>
-       <ButtonsContainer>
-         <Button name='GET MORE INFO'  onButtonClick={buttonGetMoreInfo}/>
-         <Button name='DELETE ALL DATA' onButtonClick={buttonDeleteAllData}/>
-       </ButtonsContainer>
-       <FactsBlock>{catFactsElements}</FactsBlock>
-             
-    </Lesson10Component>
-  )
-}
-
-export default Lesson10;
+      })
+    
+      const deleteCatFacts = () => {
+        setCatFacts([])
+      }
+    
+      const isEmptyCatFacts = !catFacts.length;
+    
+      // return (
+      //   <Lesson10Component>
+      //     {isLoading ? <SpinnerContainer><Spinner /></SpinnerContainer> :
+      //       <>
+      //         <ButtonsContainer>
+      //           <Button name='GET MORE INFO' onButtonClick={getCatFact} />
+      //           <Button name='DELETE ALL FACTS' onButtonClick={deleteCatFacts} disabled={isEmptyCatFacts} />
+      //         </ButtonsContainer>
+      //         <FactsBlock isHideBlock={isEmptyCatFacts}>{catFactsElements}</FactsBlock>
+      //       </>}
+      //   </Lesson10Component>
+      // )
+    
+      return (
+        <Lesson10Component>
+          <ButtonsContainer>
+            <Button name='GET MORE INFO' onButtonClick={getCatFact} />
+            <Button name='DELETE ALL FACTS' onButtonClick={deleteCatFacts} disabled={isEmptyCatFacts} />
+          </ButtonsContainer>
+          {isLoading ? <SpinnerContainer><Spinner /></SpinnerContainer> :
+            <FactsBlock isHideBlock={isEmptyCatFacts}>{catFactsElements}</FactsBlock>}
+        </Lesson10Component>
+      )
+    }
+    
+    export default Lesson10;
