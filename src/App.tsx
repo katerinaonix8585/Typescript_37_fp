@@ -7,6 +7,10 @@ import GlobalStyles from 'styles/GlobalStyles';
 import About from 'pages/About/About';
 import Home from 'pages/Home/Home';
 import Users from 'pages/Users/Users';
+import Clients from 'pages/Clients/Clients';
+import Facebook from 'pages/Clients/Facebook/Facebook';
+import Instagram from 'pages/Clients/Instagram/Instargram';
+import LinkedIn from 'pages/Clients/LinkedIn/LinkedIn';
 
 // Lessons
 // import Lesson06 from 'lessons/Lesson06/Lesson06';
@@ -39,6 +43,10 @@ function App() {
           <Route path='/' element={<Home />}/>
           <Route path='/about' element={<About />}/>
           <Route path='/users' element={<Users />}/>
+          <Route path='/clients' element={<Clients />}/>
+          <Route path='/clients/facebook' element={<Facebook />}/>
+          <Route path='/clients/instagram' element={<Instagram />}/>
+          <Route path='/clients/linkedin' element={<LinkedIn />}/>
           <Route path='*' element='Page Not Found'/>
         </Routes>        
 
