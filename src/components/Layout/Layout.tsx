@@ -1,11 +1,22 @@
-import { Footer, Header, LayoutComponent, Main } from "./styles"
+import { Footer, Header, HeaderLogo, HeaderLogoContainer, LayoutComponent, Main } from "./styles"
+import { LayoutProps } from "./types"
 
-function Layout() {
+function Layout({children} : LayoutProps) {
   return (
     <LayoutComponent>
-      <Header></Header>
-      <Main></Main>
-      <Footer></Footer>
+      <Header>
+        <HeaderLogoContainer>
+          <HeaderLogo />
+        </HeaderLogoContainer>
+      </Header>
+      <Main>
+      {children}
+      </Main>
+      <Footer>
+      <HeaderLogoContainer>
+          <HeaderLogo />
+        </HeaderLogoContainer>      
+      </Footer>
     </LayoutComponent>
   )
 }
