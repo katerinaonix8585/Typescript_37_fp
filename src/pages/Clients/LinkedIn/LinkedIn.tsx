@@ -7,7 +7,7 @@ function LinkedIn(){
   const navigate = useNavigate();  
 
   const goBack = () => {
-    navigate('/clients')
+    navigate(-1)
   }
 
 
