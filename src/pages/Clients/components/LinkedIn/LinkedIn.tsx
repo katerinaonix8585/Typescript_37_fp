@@ -1,6 +1,7 @@
 import Button from "components/Button/Button";
 import { LinkedInInfo, LinkedInWrapper } from "./styles";
 import { useNavigate } from "react-router-dom";
+import GoBackButton from "components/GoBackButton/GoBackButton";
 
 function LinkedIn(){
 
@@ -19,7 +20,7 @@ function LinkedIn(){
             <p>Штаб-квартира: Маунтин-Вью, Калифорния, США.</p>
             <p>Основной продукт: Социальная сеть LinkedIn, предназначенная для профессиональных контактов, обмена информацией о работе и карьерных возможностях.</p>                
           </LinkedInInfo>
-        <Button name='Go to Clients' onButtonClick={goBack} />
+          <GoBackButton />
         </LinkedInWrapper>
     )
 }

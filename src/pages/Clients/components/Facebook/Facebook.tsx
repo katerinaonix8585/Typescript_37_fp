@@ -1,6 +1,6 @@
-import Button from "components/Button/Button";
 import { FacebookInfo, FacebookWrapper } from "./styles";
 import { useNavigate } from "react-router-dom";
+import GoBackButton from "components/GoBackButton/GoBackButton";
 
 function Facebook(){
 
@@ -19,7 +19,7 @@ function Facebook(){
             <p>Штаб-квартира: Менло-Парк, Калифорния, США.</p>
             <p>Основной продукт: Социальная сеть Facebook, платформа для обмена информацией и общения между пользователями.</p>                
           </FacebookInfo>
-        <Button name='Go to Clients' onButtonClick={goBack} />
+        <GoBackButton />
         </FacebookWrapper>
     )
 }

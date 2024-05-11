@@ -1,6 +1,7 @@
 import Button from "components/Button/Button";
 import { InstagramInfo, InstagramWrapper } from "./styles";
 import { useNavigate } from "react-router-dom";
+import GoBackButton from "components/GoBackButton/GoBackButton";
 
 function Instagram(){
 
@@ -19,7 +20,7 @@ function Instagram(){
             <p>Штаб-квартира: Менло-Парк, Калифорния, США.</p>
             <p>Основной продукт: Социальная сеть Instagram, платформа для обмена фотографиями и видеозаписями, а также для взаимодействия пользователей через комментарии и лайки.</p>                
           </InstagramInfo>
-        <Button name='Go to Clients' onButtonClick={goBack} />
+          <GoBackButton />
         </InstagramWrapper>
     )
 }

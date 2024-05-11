@@ -8,9 +8,9 @@ import About from 'pages/About/About';
 import Home from 'pages/Home/Home';
 import Users from 'pages/Users/Users';
 import Clients from 'pages/Clients/Clients';
-import Facebook from 'pages/Clients/Facebook/Facebook';
-import Instagram from 'pages/Clients/Instagram/Instargram';
-import LinkedIn from 'pages/Clients/LinkedIn/LinkedIn';
+import Facebook from 'pages/Clients/components/Facebook/Facebook';
+import Instagram from 'pages/Clients/components/Instagram/Instargram';
+import LinkedIn from 'pages/Clients/components/LinkedIn/LinkedIn';
 
 // Lessons
 // import Lesson06 from 'lessons/Lesson06/Lesson06';
