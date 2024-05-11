@@ -11,6 +11,7 @@ import Clients from 'pages/Clients/Clients';
 import Facebook from 'pages/Clients/components/Facebook/Facebook';
 import Instagram from 'pages/Clients/components/Instagram/Instargram';
 import LinkedIn from 'pages/Clients/components/LinkedIn/LinkedIn';
+import Lesson14 from 'lessons/Lesson14/Lesson14';
 
 // Lessons
 // import Lesson06 from 'lessons/Lesson06/Lesson06';
@@ -37,7 +38,7 @@ function App() {
     <>
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
+      {/* <Layout>
         
         <Routes>
           <Route path='/' element={<Home />}/>
@@ -50,7 +51,7 @@ function App() {
           <Route path='*' element='Page Not Found'/>
         </Routes>        
 
-      </Layout>
+      </Layout> */}
        {/* <Lesson06 /> */}
        {/* <Lesson07 /> */}
        {/* <Homework07 /> */}
@@ -62,7 +63,9 @@ function App() {
       {/* <Lesson11 /> */}
       {/* <Homework11 /> */}
       {/* <Lesson12 /> */}
-      {/* <Consultation05 /> */}</BrowserRouter>
+      {/* <Consultation05 /> */}
+      <Lesson14 />
+      </BrowserRouter>
     
     </>
     );
