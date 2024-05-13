@@ -1,17 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-import Layout from 'components/Layout/Layout';
+// import Layout from 'components/Layout/Layout';
 import GlobalStyles from 'styles/GlobalStyles';
 
-import About from 'pages/About/About';
-import Home from 'pages/Home/Home';
-import Users from 'pages/Users/Users';
-import Clients from 'pages/Clients/Clients';
-import Facebook from 'pages/Clients/components/Facebook/Facebook';
-import Instagram from 'pages/Clients/components/Instagram/Instargram';
-import LinkedIn from 'pages/Clients/components/LinkedIn/LinkedIn';
-import Lesson14 from 'lessons/Lesson14/Lesson14';
+// import About from 'pages/About/About';
+// import Home from 'pages/Home/Home';
+// import Users from 'pages/Users/Users';
+// import Clients from 'pages/Clients/Clients';
+// import Facebook from 'pages/Clients/components/Facebook/Facebook';
+// import Instagram from 'pages/Clients/components/Instagram/Instargram';
+// import LinkedIn from 'pages/Clients/components/LinkedIn/LinkedIn';
+// import Lesson14 from 'lessons/Lesson14/Lesson14';
+import Homework14 from 'homeworks/Homework14/Homework14';
 
 // Lessons
 // import Lesson06 from 'lessons/Lesson06/Lesson06';
@@ -64,7 +65,8 @@ function App() {
       {/* <Homework11 /> */}
       {/* <Lesson12 /> */}
       {/* <Consultation05 /> */}
-      <Lesson14 />
+      {/* <Lesson14 /> */}
+       <Homework14 />
       </BrowserRouter>
     
     </>
