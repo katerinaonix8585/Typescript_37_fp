@@ -1,15 +1,11 @@
 import Message from "../Message/Message";
 import { CardTitle, CardWrapper } from "./styles";
-import { PersonProps } from "./types";
-
-
-
 
 function Card () {
 
  return (
     <CardWrapper>
-       <CardTitle>Екатерина Козлова</CardTitle> 
+       <CardTitle>Ekaterina Kozlova</CardTitle> 
        <Message />   
     </CardWrapper>
     

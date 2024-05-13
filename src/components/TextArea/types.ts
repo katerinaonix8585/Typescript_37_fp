@@ -3,5 +3,5 @@ export interface TextAreaProps {
     name: string,
     label: string,
     value?: string,
-    onInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }

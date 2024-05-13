@@ -9,5 +9,4 @@ function Homework14 () {
         )
     }
 
-
 export default Homework14;

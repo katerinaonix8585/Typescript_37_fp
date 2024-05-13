@@ -15,6 +15,11 @@ width: 50%;
 padding: 20px 0px;
 `
 
+export const TextArea = styled.textarea`
+width: 50%;
+padding: 20px 0px;
+`
+
 
 
 

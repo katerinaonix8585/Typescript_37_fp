@@ -3,9 +3,8 @@ import { MessageText, MessageWrapper } from "./styles";
 import { PostedMessageContext } from "../BlogManagement/BlogManagement";
 
 function Message () {
-    const messageData = useContext(PostedMessageContext);
-    console.log(messageData);
-    return (
+    const messageData = useContext(PostedMessageContext);    
+    return (        
         <MessageWrapper>
             <MessageText>{messageData}</MessageText>
         </MessageWrapper>
