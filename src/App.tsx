@@ -12,6 +12,7 @@ import Facebook from 'pages/Clients/components/Facebook/Facebook';
 import Instagram from 'pages/Clients/components/Instagram/Instargram';
 import LinkedIn from 'pages/Clients/components/LinkedIn/LinkedIn';
 import Lesson14 from 'lessons/Lesson14/Lesson14';
+import Weather from 'pages/Weather/Weather';
 
 // Lessons
 // import Lesson06 from 'lessons/Lesson06/Lesson06';
@@ -64,7 +65,8 @@ function App() {
       {/* <Homework11 /> */}
       {/* <Lesson12 /> */}
       {/* <Consultation05 /> */}
-      <Lesson14 />
+      {/* <Lesson14 /> */}
+      <Weather />
       </BrowserRouter>
     
     </>
