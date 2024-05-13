@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-import Layout from 'components/Layout/Layout';
+// import Layout from 'components/Layout/Layout';
 import GlobalStyles from 'styles/GlobalStyles';
 
 import About from 'pages/About/About';
