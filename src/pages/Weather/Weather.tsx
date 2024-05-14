@@ -35,21 +35,23 @@ function Weather (){
             return;
           }
 
-          setIsLoading(true)
-          console.log(city)          
+          setIsLoading(true)                 
           const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APP_ID}&units=metric`);
           const result = await response.json();
           
           if (!response.ok) {
             const errorMessage = result.message;
-            throw new Error(errorMessage);             
+            const errorCode = response.status;
+            throw new Error(`${errorMessage} (код ошибки: ${errorCode})`);             
             } else {
             const icon = result.weather[0].icon;
             const feelsLike = result.main.feels_like;
-            const temp = result.main.temp; 
+            const citySite = result.main.city;
+            const temp = result.main.temp;             
             setInfo(true)
             setIcon(icon);
             setFeelsLike(feelsLike);
+            setCity(citySite);
             setTemp(temp);        
           }
         } catch (error: any) {
