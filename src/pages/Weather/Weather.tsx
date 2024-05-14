@@ -14,6 +14,7 @@ function Weather (){
     const [error, setError] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [city, setCity] = useState<string>('');
+    const [citySite, setCitySite] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(false); 
     const [icon, setIcon] = useState<string>(''); 
     const [feelsLike, setFeelsLike] = useState<number>(0); 
@@ -30,12 +31,13 @@ function Weather (){
           setInfo(false);
           setError(false);
             
-          if (!city) {
+          if (city.trim().length === 0) {
             alert("Введите город");
             return;
           }
 
           setIsLoading(true)                 
+          
           const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APP_ID}&units=metric`);
           const result = await response.json();
           
@@ -46,15 +48,16 @@ function Weather (){
             } else {
             const icon = result.weather[0].icon;
             const feelsLike = result.main.feels_like;
-            const citySite = result.main.city;
+            const citySite = result.name;
             const temp = result.main.temp;             
             setInfo(true)
             setIcon(icon);
             setFeelsLike(feelsLike);
-            setCity(citySite);
+            setCitySite(citySite);
             setTemp(temp);        
           }
-        } catch (error: any) {
+
+             } catch (error: any) {
             setError(true);
             setErrorMessage(error.message);            
         } finally {
@@ -77,7 +80,7 @@ function Weather (){
                <SpinnerContainer><Spinner /></SpinnerContainer> :
                  (
                    <>
-                   {info && <WeatherInfo icon={icon} feelsLike={feelsLike} temp={temp} city={city}/> }
+                   {info && <WeatherInfo icon={icon} feelsLike={feelsLike} temp={temp} city={citySite}/> }
                    {error && <WeatherError message={errorMessage}/>}
                    </>
                 )
